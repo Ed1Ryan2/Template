@@ -1,0 +1,10 @@
+solution:
+  created-by: uv2csolution@1.5.0
+  created-for: CMSIS-Toolbox@2.4.0
+  compiler: AC6
+  target-types:
+    - type: emptyLPMSPM0G3507nortoskeil
+      device: Texas Instruments::MSPM0G3507
+      optimize: debug
+  projects:
+    - project: empty_LP_MSPM0G3507_nortos_keil.cproject.yml

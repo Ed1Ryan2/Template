@@ -1,0 +1,62 @@
+project:
+  packs:
+    - pack: TexasInstruments::MSPM0G1X0X_G3X0X_DFP
+  setups:
+    - setup: Options for emptyLPMSPM0G3507nortoskeil
+      add-path:
+        - ../../../../../source
+      debug: "on"
+      define:
+        - __MSPM0G3507__
+      misc:
+        - C:
+            - -std=c99
+          C-CPP:
+            - -fno-rtti
+            - -funsigned-char
+            - -fshort-enums
+            - -fshort-wchar
+            - -ffunction-sections
+            - -Wno-packed
+            - -Wno-missing-variable-declarations
+            - -Wno-missing-prototypes
+            - -Wno-missing-noreturn
+            - -Wno-sign-conversion
+            - -Wno-nonportable-include-path
+            - -Wno-reserved-id-macro
+            - -Wno-unused-macros
+            - -Wno-documentation-unknown-command
+            - -Wno-documentation
+            - -Wno-license-management
+            - -Wno-parentheses-equality
+            - -Wno-covered-switch-default
+            - -Wno-unreachable-code-break
+          CPP:
+            - -xc++
+            - -std=c++11
+          ASM:
+            - -masm=auto
+          Link:
+            - --map
+            - --load_addr_map_info
+            - --xref
+            - --callgraph
+            - --symbols
+            - --info sizes
+            - --info totals
+            - --info unused
+            - --info veneers
+            - ../../../../../../source/ti/driverlib/lib/keil/m0p/mspm0g1x0x_g3x0x/driverlib.a
+            - --strict
+            - --summary_stderr
+            - --info summarysizes
+  linker:
+    - script: mspm0g3507.sct
+  groups:
+    - group: Source
+      files:
+        - file: ../empty.c
+        - file: ../empty.syscfg
+        - file: startup_mspm0g350x_uvision.s
+        - file: ../ti_msp_dl_config.h
+        - file: ../ti_msp_dl_config.c

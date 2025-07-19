@@ -20,6 +20,7 @@ void key_proc()
 	if(k1_last & !k1)//¼ì²âµ½ÏÂ½µÑØ
 	{
 		DL_GPIO_togglePins(LED_PORT,LED_D1_PIN);
+		setFrq(2000);
 	}
 	
 	k1_last = k1;

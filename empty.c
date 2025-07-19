@@ -37,13 +37,13 @@
 int main(void)
 {
     SYSCFG_DL_init();
-	//使能定时器中断
-	NVIC_EnableIRQ(TIMER_1ms_INST_INT_IRQN);
 	
+	TIM_Init();
+	UART_Init();
 	
     while (1)
 	{
-//		key_proc();
+		
     }
 }
 

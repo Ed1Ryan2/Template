@@ -77,13 +77,63 @@ extern "C" {
 
 
 
+/* Defines for PWM_0 */
+#define PWM_0_INST                                                         TIMA1
+#define PWM_0_INST_IRQHandler                                   TIMA1_IRQHandler
+#define PWM_0_INST_INT_IRQN                                     (TIMA1_INT_IRQn)
+#define PWM_0_INST_CLK_FREQ                                              1000000
+/* GPIO defines for channel 0 */
+#define GPIO_PWM_0_C0_PORT                                                 GPIOA
+#define GPIO_PWM_0_C0_PIN                                         DL_GPIO_PIN_10
+#define GPIO_PWM_0_C0_IOMUX                                      (IOMUX_PINCM21)
+#define GPIO_PWM_0_C0_IOMUX_FUNC                     IOMUX_PINCM21_PF_TIMA1_CCP0
+#define GPIO_PWM_0_C0_IDX                                    DL_TIMER_CC_0_INDEX
+/* GPIO defines for channel 1 */
+#define GPIO_PWM_0_C1_PORT                                                 GPIOA
+#define GPIO_PWM_0_C1_PIN                                         DL_GPIO_PIN_11
+#define GPIO_PWM_0_C1_IOMUX                                      (IOMUX_PINCM22)
+#define GPIO_PWM_0_C1_IOMUX_FUNC                     IOMUX_PINCM22_PF_TIMA1_CCP1
+#define GPIO_PWM_0_C1_IDX                                    DL_TIMER_CC_1_INDEX
+
+
+
 /* Defines for TIMER_1ms */
 #define TIMER_1ms_INST                                                   (TIMA0)
 #define TIMER_1ms_INST_IRQHandler                               TIMA0_IRQHandler
 #define TIMER_1ms_INST_INT_IRQN                                 (TIMA0_INT_IRQn)
 #define TIMER_1ms_INST_LOAD_VALUE                                       (31999U)
+/* Defines for TIMER_1s */
+#define TIMER_1s_INST                                                    (TIMG0)
+#define TIMER_1s_INST_IRQHandler                                TIMG0_IRQHandler
+#define TIMER_1s_INST_INT_IRQN                                  (TIMG0_INT_IRQn)
+#define TIMER_1s_INST_LOAD_VALUE                                        (19999U)
 
 
+
+/* Defines for UART_0 */
+#define UART_0_INST                                                        UART0
+#define UART_0_INST_FREQUENCY                                           32000000
+#define UART_0_INST_IRQHandler                                  UART0_IRQHandler
+#define UART_0_INST_INT_IRQN                                      UART0_INT_IRQn
+#define GPIO_UART_0_RX_PORT                                                GPIOA
+#define GPIO_UART_0_TX_PORT                                                GPIOA
+#define GPIO_UART_0_RX_PIN                                         DL_GPIO_PIN_1
+#define GPIO_UART_0_TX_PIN                                         DL_GPIO_PIN_0
+#define GPIO_UART_0_IOMUX_RX                                      (IOMUX_PINCM2)
+#define GPIO_UART_0_IOMUX_TX                                      (IOMUX_PINCM1)
+#define GPIO_UART_0_IOMUX_RX_FUNC                       IOMUX_PINCM2_PF_UART0_RX
+#define GPIO_UART_0_IOMUX_TX_FUNC                       IOMUX_PINCM1_PF_UART0_TX
+#define UART_0_BAUD_RATE                                                (115200)
+#define UART_0_IBRD_32_MHZ_115200_BAUD                                      (17)
+#define UART_0_FBRD_32_MHZ_115200_BAUD                                      (23)
+
+
+
+
+
+/* Defines for DMA_CH0 */
+#define DMA_CH0_CHAN_ID                                                      (0)
+#define UART_0_INST_DMA_TRIGGER                              (DMA_UART0_RX_TRIG)
 
 
 /* Port definition for Pin Group LED */
@@ -107,7 +157,11 @@ void SYSCFG_DL_init(void);
 void SYSCFG_DL_initPower(void);
 void SYSCFG_DL_GPIO_init(void);
 void SYSCFG_DL_SYSCTL_init(void);
+void SYSCFG_DL_PWM_0_init(void);
 void SYSCFG_DL_TIMER_1ms_init(void);
+void SYSCFG_DL_TIMER_1s_init(void);
+void SYSCFG_DL_UART_0_init(void);
+void SYSCFG_DL_DMA_init(void);
 
 void SYSCFG_DL_SYSTICK_init(void);
 

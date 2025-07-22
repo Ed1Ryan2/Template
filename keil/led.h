@@ -5,8 +5,6 @@
 
 void Led_Disp(unsigned char i);
 
-
-
 void Toggle_Task_1ms();
 
 #endif

@@ -34,20 +34,67 @@
 
 #include "bsp.h"
 
+unsigned int uartTick;
+unsigned int imuTick;
+unsigned int delay_times = 0;
+
 int main(void)
 {
     SYSCFG_DL_init();
 	
+	
+	
 	TIM_Init();
+	
+	ADC_Init();
+	
+	IMU_Init();
+	
 	UART_Init();
 	
     while (1)
 	{
 		
+		key_proc();//执行按键处理
     }
 }
 
-void SysTick_Handler(void)//SysTick，1ms执行一次
+//SysTick，1ms执行一次
+void SysTick_Handler(void)
+{
+	if( delay_times != 0 )
+    {
+        delay_times--;
+    }
+}
+
+//定时器中断
+void TIMER_1ms_INST_IRQHandler()
+{
+	uartTick++;
+	imuTick++;
+	if(uartTick>100)
+	{
+		uart_proc();//执行串口处理
+		uartTick=0;
+	}
+	
+	if(imuTick>50)
+	{
+		imu_proc();
+		imuTick=0;
+	}
+	
+}
+
+void TIMER_1s_INST_IRQHandler()
 {
 	
+//	adc_proc();//ADC处理
+}
+
+void delay_ms(unsigned int ms)
+{
+    delay_times = ms;
+    while( delay_times != 0 );
 }

@@ -54,4 +54,5 @@
   ..\source\ti\driverlib\dl_uart.h ..\source\ti\driverlib\dl_uart_main.h \
   ..\source\ti\driverlib\dl_vref.h ..\source\ti\driverlib\dl_wwdt.h \
   ..\source\ti\driverlib\m0p\dl_interrupt.h \
-  ..\source\ti\driverlib\m0p\dl_systick.h led.h tim.h uart.h
+  ..\source\ti\driverlib\m0p\dl_systick.h led.h tim.h uart.h adc.h \
+  wit_c_sdk.h REG.h IMU.h

@@ -13,5 +13,12 @@
 #include "key.h"
 #include "tim.h"
 #include "uart.h"
+#include "adc.h"
+
+#include "wit_c_sdk.h"
+#include "REG.h"
+#include "IMU.h"
+
+void delay_ms(unsigned int ms);
 
 #endif

@@ -10,6 +10,7 @@
       <TargetName>empty_LP_MSPM0G3507_nortos_keil</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
+      <pArmCC>6220000::V6.22::ARMCLANG</pArmCC>
       <pCCUsed>6220000::V6.22::ARMCLANG</pCCUsed>
       <uAC6>1</uAC6>
       <TargetOption>
@@ -190,7 +191,7 @@
             <hadIRAM2>1</hadIRAM2>
             <hadIROM2>1</hadIROM2>
             <StupSel>0</StupSel>
-            <useUlib>0</useUlib>
+            <useUlib>1</useUlib>
             <EndSel>0</EndSel>
             <uLtcg>0</uLtcg>
             <nSecure>0</nSecure>
@@ -458,6 +459,46 @@
               <FileName>uart.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\uart.c</FilePath>
+            </File>
+            <File>
+              <FileName>adc.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\adc.h</FilePath>
+            </File>
+            <File>
+              <FileName>adc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\adc.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Module</GroupName>
+          <Files>
+            <File>
+              <FileName>wit_c_sdk.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\wit_c_sdk.c</FilePath>
+            </File>
+            <File>
+              <FileName>wit_c_sdk.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\wit_c_sdk.h</FilePath>
+            </File>
+            <File>
+              <FileName>REG.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\REG.h</FilePath>
+            </File>
+            <File>
+              <FileName>IMU.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\IMU.h</FilePath>
+            </File>
+            <File>
+              <FileName>IMU.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\IMU.c</FilePath>
             </File>
           </Files>
         </Group>

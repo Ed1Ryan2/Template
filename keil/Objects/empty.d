@@ -56,4 +56,5 @@
   ..\source\ti\driverlib\m0p\dl_interrupt.h \
   ..\source\ti\driverlib\m0p\dl_systick.h ..\keil\bsp.h \
   ..\..\Template\ti_msp_dl_config.h ..\keil\led.h ..\keil\key.h \
-  ..\keil\tim.h ..\keil\uart.h
+  ..\keil\tim.h ..\keil\uart.h ..\keil\adc.h ..\keil\wit_c_sdk.h \
+  ..\keil\REG.h ..\keil\IMU.h

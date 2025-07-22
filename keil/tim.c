@@ -8,20 +8,9 @@ void TIM_Init()
 	
 	//使能PWM
 	DL_TimerA_startCounter(PWM_0_INST);
-}
-
-
-//定时器中断
-void TIMER_1ms_INST_IRQHandler()
-{
-	key_proc();
-}
-
-void TIMER_1s_INST_IRQHandler()
-{
-//	DL_GPIO_togglePins(LED_PORT,LED_D1_PIN);
 	
 }
+
 
 //PWM操作函数
 //操作一个PWM的四个通道的频率

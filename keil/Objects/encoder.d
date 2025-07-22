@@ -1,5 +1,6 @@
-./objects/uart.o: uart.c uart.h bsp.h ..\..\Template\ti_msp_dl_config.h \
-  ..\source\ti\devices\msp\msp.h ..\source\ti\devices\DeviceFamily.h \
+./objects/encoder.o: Encoder.c Encoder.h bsp.h \
+  ..\..\Template\ti_msp_dl_config.h ..\source\ti\devices\msp\msp.h \
+  ..\source\ti\devices\DeviceFamily.h \
   ..\source\ti\devices\msp\m0p\mspm0g350x.h \
   ..\source\third_party\CMSIS\Core\Include\core_cm0plus.h \
   ..\source\ti\devices\msp\peripherals\hw_adc12.h \
@@ -54,5 +55,5 @@
   ..\source\ti\driverlib\dl_uart.h ..\source\ti\driverlib\dl_uart_main.h \
   ..\source\ti\driverlib\dl_vref.h ..\source\ti\driverlib\dl_wwdt.h \
   ..\source\ti\driverlib\m0p\dl_interrupt.h \
-  ..\source\ti\driverlib\m0p\dl_systick.h led.h key.h tim.h adc.h \
-  wit_c_sdk.h REG.h IMU.h Encoder.h
+  ..\source\ti\driverlib\m0p\dl_systick.h led.h key.h tim.h uart.h adc.h \
+  wit_c_sdk.h REG.h IMU.h

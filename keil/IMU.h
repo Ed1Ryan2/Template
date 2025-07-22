@@ -12,7 +12,7 @@
 void IMU_Init(void);
 void imu_proc(void);
 
-
+void show_data(void);
 
 
 static volatile char s_cDataUpdate = 0, s_cCmd = 0xff;

@@ -38,6 +38,8 @@ unsigned int uartTick;
 unsigned int imuTick;
 unsigned int delay_times = 0;
 
+unsigned int second = 0;
+
 int main(void)
 {
     SYSCFG_DL_init();
@@ -46,15 +48,16 @@ int main(void)
 	
 	TIM_Init();
 	
-	ADC_Init();
+//	ADC_Init();
 	
 	IMU_Init();
 	
 	UART_Init();
 	
+	Encoder_Init();
+	
     while (1)
 	{
-		
 		key_proc();//执行按键处理
     }
 }
@@ -62,6 +65,7 @@ int main(void)
 //SysTick，1ms执行一次
 void SysTick_Handler(void)
 {
+	
 	if( delay_times != 0 )
     {
         delay_times--;
@@ -79,9 +83,9 @@ void TIMER_1ms_INST_IRQHandler()
 		uartTick=0;
 	}
 	
-	if(imuTick>50)
+	if(imuTick>500)
 	{
-		imu_proc();
+//		imu_proc();
 		imuTick=0;
 	}
 	
@@ -89,8 +93,10 @@ void TIMER_1ms_INST_IRQHandler()
 
 void TIMER_1s_INST_IRQHandler()
 {
-	
-//	adc_proc();//ADC处理
+	DL_WWDT_restart(WWDT0_INST);
+	DL_GPIO_togglePins(LED_PORT,LED_D1_PIN);
+	second++;
+//	printf("%d second passed \r\n",second);
 }
 
 void delay_ms(unsigned int ms)

@@ -79,22 +79,40 @@ extern "C" {
 
 
 /* Defines for PWM_0 */
-#define PWM_0_INST                                                         TIMA1
-#define PWM_0_INST_IRQHandler                                   TIMA1_IRQHandler
-#define PWM_0_INST_INT_IRQN                                     (TIMA1_INT_IRQn)
-#define PWM_0_INST_CLK_FREQ                                              2500000
+#define PWM_0_INST                                                         TIMG7
+#define PWM_0_INST_IRQHandler                                   TIMG7_IRQHandler
+#define PWM_0_INST_INT_IRQN                                     (TIMG7_INT_IRQn)
+#define PWM_0_INST_CLK_FREQ                                             80000000
 /* GPIO defines for channel 0 */
 #define GPIO_PWM_0_C0_PORT                                                 GPIOA
-#define GPIO_PWM_0_C0_PIN                                         DL_GPIO_PIN_10
-#define GPIO_PWM_0_C0_IOMUX                                      (IOMUX_PINCM21)
-#define GPIO_PWM_0_C0_IOMUX_FUNC                     IOMUX_PINCM21_PF_TIMA1_CCP0
+#define GPIO_PWM_0_C0_PIN                                          DL_GPIO_PIN_3
+#define GPIO_PWM_0_C0_IOMUX                                       (IOMUX_PINCM8)
+#define GPIO_PWM_0_C0_IOMUX_FUNC                      IOMUX_PINCM8_PF_TIMG7_CCP0
 #define GPIO_PWM_0_C0_IDX                                    DL_TIMER_CC_0_INDEX
 /* GPIO defines for channel 1 */
 #define GPIO_PWM_0_C1_PORT                                                 GPIOA
-#define GPIO_PWM_0_C1_PIN                                         DL_GPIO_PIN_11
-#define GPIO_PWM_0_C1_IOMUX                                      (IOMUX_PINCM22)
-#define GPIO_PWM_0_C1_IOMUX_FUNC                     IOMUX_PINCM22_PF_TIMA1_CCP1
+#define GPIO_PWM_0_C1_PIN                                          DL_GPIO_PIN_2
+#define GPIO_PWM_0_C1_IOMUX                                       (IOMUX_PINCM7)
+#define GPIO_PWM_0_C1_IOMUX_FUNC                      IOMUX_PINCM7_PF_TIMG7_CCP1
 #define GPIO_PWM_0_C1_IDX                                    DL_TIMER_CC_1_INDEX
+
+/* Defines for PWM_1 */
+#define PWM_1_INST                                                         TIMG6
+#define PWM_1_INST_IRQHandler                                   TIMG6_IRQHandler
+#define PWM_1_INST_INT_IRQN                                     (TIMG6_INT_IRQn)
+#define PWM_1_INST_CLK_FREQ                                             80000000
+/* GPIO defines for channel 0 */
+#define GPIO_PWM_1_C0_PORT                                                 GPIOA
+#define GPIO_PWM_1_C0_PIN                                          DL_GPIO_PIN_5
+#define GPIO_PWM_1_C0_IOMUX                                      (IOMUX_PINCM10)
+#define GPIO_PWM_1_C0_IOMUX_FUNC                     IOMUX_PINCM10_PF_TIMG6_CCP0
+#define GPIO_PWM_1_C0_IDX                                    DL_TIMER_CC_0_INDEX
+/* GPIO defines for channel 1 */
+#define GPIO_PWM_1_C1_PORT                                                 GPIOA
+#define GPIO_PWM_1_C1_PIN                                          DL_GPIO_PIN_6
+#define GPIO_PWM_1_C1_IOMUX                                      (IOMUX_PINCM11)
+#define GPIO_PWM_1_C1_IOMUX_FUNC                     IOMUX_PINCM11_PF_TIMG6_CCP1
+#define GPIO_PWM_1_C1_IDX                                    DL_TIMER_CC_1_INDEX
 
 
 
@@ -104,10 +122,10 @@ extern "C" {
 #define TIMER_1ms_INST_INT_IRQN                                 (TIMA0_INT_IRQn)
 #define TIMER_1ms_INST_LOAD_VALUE                                       (39999U)
 /* Defines for TIMER_1s */
-#define TIMER_1s_INST                                                    (TIMG0)
-#define TIMER_1s_INST_IRQHandler                                TIMG0_IRQHandler
-#define TIMER_1s_INST_INT_IRQN                                  (TIMG0_INT_IRQn)
-#define TIMER_1s_INST_LOAD_VALUE                                        (24999U)
+#define TIMER_1s_INST                                                    (TIMA1)
+#define TIMER_1s_INST_IRQHandler                                TIMA1_IRQHandler
+#define TIMER_1s_INST_INT_IRQN                                  (TIMA1_INT_IRQn)
+#define TIMER_1s_INST_LOAD_VALUE                                        (49999U)
 
 
 
@@ -143,6 +161,38 @@ extern "C" {
 #define UART_1_BAUD_RATE                                                  (9600)
 #define UART_1_IBRD_40_MHZ_9600_BAUD                                       (260)
 #define UART_1_FBRD_40_MHZ_9600_BAUD                                        (27)
+/* Defines for UART_2 */
+#define UART_2_INST                                                        UART2
+#define UART_2_INST_FREQUENCY                                           40000000
+#define UART_2_INST_IRQHandler                                  UART2_IRQHandler
+#define UART_2_INST_INT_IRQN                                      UART2_INT_IRQn
+#define GPIO_UART_2_RX_PORT                                                GPIOA
+#define GPIO_UART_2_TX_PORT                                                GPIOA
+#define GPIO_UART_2_RX_PIN                                        DL_GPIO_PIN_22
+#define GPIO_UART_2_TX_PIN                                        DL_GPIO_PIN_21
+#define GPIO_UART_2_IOMUX_RX                                     (IOMUX_PINCM47)
+#define GPIO_UART_2_IOMUX_TX                                     (IOMUX_PINCM46)
+#define GPIO_UART_2_IOMUX_RX_FUNC                      IOMUX_PINCM47_PF_UART2_RX
+#define GPIO_UART_2_IOMUX_TX_FUNC                      IOMUX_PINCM46_PF_UART2_TX
+#define UART_2_BAUD_RATE                                                  (9600)
+#define UART_2_IBRD_40_MHZ_9600_BAUD                                       (260)
+#define UART_2_FBRD_40_MHZ_9600_BAUD                                        (27)
+/* Defines for UART_3 */
+#define UART_3_INST                                                        UART3
+#define UART_3_INST_FREQUENCY                                           80000000
+#define UART_3_INST_IRQHandler                                  UART3_IRQHandler
+#define UART_3_INST_INT_IRQN                                      UART3_INT_IRQn
+#define GPIO_UART_3_RX_PORT                                                GPIOA
+#define GPIO_UART_3_TX_PORT                                                GPIOA
+#define GPIO_UART_3_RX_PIN                                        DL_GPIO_PIN_13
+#define GPIO_UART_3_TX_PIN                                        DL_GPIO_PIN_14
+#define GPIO_UART_3_IOMUX_RX                                     (IOMUX_PINCM35)
+#define GPIO_UART_3_IOMUX_TX                                     (IOMUX_PINCM36)
+#define GPIO_UART_3_IOMUX_RX_FUNC                      IOMUX_PINCM35_PF_UART3_RX
+#define GPIO_UART_3_IOMUX_TX_FUNC                      IOMUX_PINCM36_PF_UART3_TX
+#define UART_3_BAUD_RATE                                                  (9600)
+#define UART_3_IBRD_80_MHZ_9600_BAUD                                       (520)
+#define UART_3_FBRD_80_MHZ_9600_BAUD                                        (53)
 
 
 
@@ -158,10 +208,20 @@ extern "C" {
 #define ADC12_0_ADCMEM_1                                      DL_ADC12_MEM_IDX_1
 #define ADC12_0_ADCMEM_1_REF                     DL_ADC12_REFERENCE_VOLTAGE_VDDA
 #define ADC12_0_ADCMEM_1_REF_VOLTAGE_V                                       3.3
+#define ADC12_0_ADCMEM_2                                      DL_ADC12_MEM_IDX_2
+#define ADC12_0_ADCMEM_2_REF                     DL_ADC12_REFERENCE_VOLTAGE_VDDA
+#define ADC12_0_ADCMEM_2_REF_VOLTAGE_V                                       3.3
+#define ADC12_0_ADCMEM_3                                      DL_ADC12_MEM_IDX_3
+#define ADC12_0_ADCMEM_3_REF                     DL_ADC12_REFERENCE_VOLTAGE_VDDA
+#define ADC12_0_ADCMEM_3_REF_VOLTAGE_V                                       3.3
 #define GPIO_ADC12_0_C0_PORT                                               GPIOA
 #define GPIO_ADC12_0_C0_PIN                                       DL_GPIO_PIN_27
 #define GPIO_ADC12_0_C1_PORT                                               GPIOA
 #define GPIO_ADC12_0_C1_PIN                                       DL_GPIO_PIN_26
+#define GPIO_ADC12_0_C2_PORT                                               GPIOA
+#define GPIO_ADC12_0_C2_PIN                                       DL_GPIO_PIN_25
+#define GPIO_ADC12_0_C3_PORT                                               GPIOA
+#define GPIO_ADC12_0_C3_PIN                                       DL_GPIO_PIN_24
 
 
 
@@ -177,7 +237,31 @@ extern "C" {
 /* Defines for S2: GPIOB.21 with pinCMx 49 on package pin 20 */
 #define KEY_S2_PIN                                              (DL_GPIO_PIN_21)
 #define KEY_S2_IOMUX                                             (IOMUX_PINCM49)
+/* Port definition for Pin Group EncoderA */
+#define EncoderA_PORT                                                    (GPIOA)
 
+/* Defines for PIN_A: GPIOA.4 with pinCMx 9 on package pin 44 */
+// groups represented: ["EncoderB","EncoderA"]
+// pins affected: ["PIN_B","PIN_A"]
+#define GPIO_MULTIPLE_GPIOA_INT_IRQN                            (GPIOA_INT_IRQn)
+#define GPIO_MULTIPLE_GPIOA_INT_IIDX            (DL_INTERRUPT_GROUP1_IIDX_GPIOA)
+#define EncoderA_PIN_A_IIDX                                  (DL_GPIO_IIDX_DIO4)
+#define EncoderA_PIN_A_PIN                                       (DL_GPIO_PIN_4)
+#define EncoderA_PIN_A_IOMUX                                      (IOMUX_PINCM9)
+/* Port definition for Pin Group EncoderB */
+#define EncoderB_PORT                                                    (GPIOA)
+
+/* Defines for PIN_B: GPIOA.7 with pinCMx 14 on package pin 49 */
+#define EncoderB_PIN_B_IIDX                                  (DL_GPIO_IIDX_DIO7)
+#define EncoderB_PIN_B_PIN                                       (DL_GPIO_PIN_7)
+#define EncoderB_PIN_B_IOMUX                                     (IOMUX_PINCM14)
+
+
+
+
+/* Defines for WWDT */
+#define WWDT0_INST                                                       (WWDT0)
+#define WWDT0_INT_IRQN                                          (WWDT0_INT_IRQn)
 
 
 /* clang-format on */
@@ -187,13 +271,17 @@ void SYSCFG_DL_initPower(void);
 void SYSCFG_DL_GPIO_init(void);
 void SYSCFG_DL_SYSCTL_init(void);
 void SYSCFG_DL_PWM_0_init(void);
+void SYSCFG_DL_PWM_1_init(void);
 void SYSCFG_DL_TIMER_1ms_init(void);
 void SYSCFG_DL_TIMER_1s_init(void);
 void SYSCFG_DL_UART_0_init(void);
 void SYSCFG_DL_UART_1_init(void);
+void SYSCFG_DL_UART_2_init(void);
+void SYSCFG_DL_UART_3_init(void);
 void SYSCFG_DL_ADC12_0_init(void);
 
 void SYSCFG_DL_SYSTICK_init(void);
+void SYSCFG_DL_WWDT0_init(void);
 
 bool SYSCFG_DL_saveConfiguration(void);
 bool SYSCFG_DL_restoreConfiguration(void);

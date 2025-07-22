@@ -18,6 +18,7 @@
 #include "wit_c_sdk.h"
 #include "REG.h"
 #include "IMU.h"
+#include "Encoder.h"
 
 void delay_ms(unsigned int ms);
 

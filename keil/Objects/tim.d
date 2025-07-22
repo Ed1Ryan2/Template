@@ -55,4 +55,4 @@
   ..\source\ti\driverlib\dl_vref.h ..\source\ti\driverlib\dl_wwdt.h \
   ..\source\ti\driverlib\m0p\dl_interrupt.h \
   ..\source\ti\driverlib\m0p\dl_systick.h led.h key.h uart.h adc.h \
-  wit_c_sdk.h REG.h IMU.h
+  wit_c_sdk.h REG.h IMU.h Encoder.h

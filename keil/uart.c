@@ -54,6 +54,7 @@ int puts(const char *_ptr)
   return cnt;
 }
 
+
 void uart_proc()//不定长字符串处理函数
 {
 	if(uart_flag==0)return;

@@ -33,7 +33,6 @@ void imu_proc()
         {
             fAngle[i] = sReg[Roll+i] / 32768.0f * 180.0f;
         }
-
 //        if(s_cDataUpdate & ACC_UPDATE)
 //        {
 //            printf("acc:%.3f %.3f %.3f\r\n", fAcc[0], fAcc[1], fAcc[2]);
@@ -54,12 +53,12 @@ void imu_proc()
 //            printf("mag:%d %d %d\r\n", sReg[HX], sReg[HY], sReg[HZ]);
 //            s_cDataUpdate &= ~MAG_UPDATE;
 //        }
-//		
-//		if(s_cDataUpdate & ANGLE_UPDATE)
-//        {
-//            printf("Angle:	X:%.3f Y:%.3f Z:%.3f\r\n", fAngle[0], fAngle[1], fAngle[2]);
-//            s_cDataUpdate &= ~ANGLE_UPDATE;
-//        }
+		
+		if(s_cDataUpdate & ANGLE_UPDATE)
+        {
+            printf("Angle:	X:%.3f Y:%.3f Z:%.3f\r\n", fAngle[0], fAngle[1], fAngle[2]);
+            s_cDataUpdate &= ~ANGLE_UPDATE;
+        }
 		if(s_cDataUpdate & ACC_UPDATE)
         {
             printf("ACC:	X:%.3f Y:%.3f Z:%.3f\r\n", fAcc[0], fAcc[1], fAcc[2]);
@@ -67,6 +66,15 @@ void imu_proc()
         }
     }
 }
+
+void show_data()
+{
+	printf("Angle:	X:%.3f Y:%.3f Z:%.3f\r\n", fAngle[0], fAngle[1], fAngle[2]);
+	s_cDataUpdate &= ~ANGLE_UPDATE;
+	printf("ACC:	X:%.3f Y:%.3f Z:%.3f\r\n", fAcc[0], fAcc[1], fAcc[2]);
+	s_cDataUpdate &= ~ACC_UPDATE;
+}
+
 
 static void SensorUartSend(uint8_t* p_data, uint32_t uiSize)
 {
